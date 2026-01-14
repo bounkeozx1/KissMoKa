@@ -1,0 +1,30 @@
+📦 Root/
+│
+├── 📄 index.html            
+├── 📄 style.css
+├── 📄 script.js
+├── 📄 favicon.ico
+├── 📄 myvideo.mp4
+├── 📄 research.pdf
+│
+├── 📁 image/                
+│   └── (product, banner, ui)
+│
+├── 📁 product/
+│   └── 📄 index.html        
+│
+├── 📁 why-us/
+│   └── 📄 index.html        
+│
+├── 📁 content/
+│   └── 📄 index.html        
+│
+├── 📁 faq/
+│   └── 📄 index.html        
+│
+├── 📁 policy/
+│   ├── 📄 privacy.html      
+│   └── 📄 terms.html        
+│
+└── 📁 info/
+    └── 📄 index.html        
