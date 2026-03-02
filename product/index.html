@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - KissMoKa</title>
+    <title>Foundation Products - KissMoKa</title>
+    
+    <!-- Google Fonts - Noto Sans Thai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 </head>
@@ -19,9 +25,9 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html" class="active">Product</a></li>
+                <li><a href="index.html" class="active">Products</a></li>
                 <li><a href="../why-us/index.html">Why Us</a></li>
-                <li><a href="../content/index.html">Content</a></li>
+                <li><a href="../content/index.html">Beauty Guide</a></li>
                 <li><a href="../faq/index.html">FAQ</a></li>
             </ul>
         </div>
@@ -29,8 +35,26 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <h1 class="page-title">Our Collection</h1>
-        <p class="page-description">Discover the perfect shade that complements your natural beauty. Each lipstick is carefully crafted for everyday elegance.</p>
+        <h1 class="page-title">Foundation Collection</h1>
+        <p class="page-description">8 carefully curated shades for every skin tone. Lightweight, buildable coverage with SPF 30 protection.</p>
+        <div class="product-badges">
+            <span class="badge">SPF 30</span>
+            <span class="badge">12-Hour Wear</span>
+            <span class="badge">Hydrating Formula</span>
+            <span class="badge">Cruelty-Free</span>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Shades</button>
+                <button class="filter-btn" data-filter="light">Light</button>
+                <button class="filter-btn" data-filter="medium">Medium</button>
+                <button class="filter-btn" data-filter="deep">Deep</button>
+            </div>
+        </div>
     </section>
 
     <!-- Products Section -->
@@ -38,91 +62,198 @@
         <div class="container">
             <div class="product-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #ffc4d0 0%, #ffb3c1 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="light">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image" style="background: linear-gradient(135deg, #f5e5d8 0%, #ead5c3 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #f5e5d8;"></div>
                     </div>
-                    <h3 class="product-name">Soft Rose</h3>
-                    <p class="product-desc">A delicate pink shade that brings out your natural glow. Perfect for daily wear, this soft rose tone adds a touch of femininity without being overwhelming. Ideal for students and office workers.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">01</span>
+                            <h3 class="product-name">Porcelain</h3>
+                        </div>
+                        <p class="product-desc">Perfect for fair skin with cool undertones. This ultra-light shade provides natural coverage while letting your skin breathe. Ideal for those seeking a barely-there finish.</p>
+                        <div class="product-features">
+                            <span>✓ Cool undertone</span>
+                            <span>✓ Fair skin</span>
+                            <span>✓ Lightweight</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #f5d7c8 0%, #efc9b8 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="light">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f7e0cb 0%, #edd0b8 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #f7e0cb;"></div>
                     </div>
-                    <h3 class="product-name">Nude Blush</h3>
-                    <p class="product-desc">Natural nude with a hint of warmth. This versatile shade complements all skin tones and is perfect for the no-makeup makeup look. Effortlessly elegant and sophisticated.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">02</span>
+                            <h3 class="product-name">Ivory</h3>
+                        </div>
+                        <p class="product-desc">Light shade with neutral undertones that adapts to your skin. Provides a natural, radiant finish perfect for everyday wear. Great for those who want balanced coverage.</p>
+                        <div class="product-features">
+                            <span>✓ Neutral undertone</span>
+                            <span>✓ Light skin</span>
+                            <span>✓ Radiant finish</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #ffb8a0 0%, #ffa890 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="light">
+                    <div class="product-badge">Popular</div>
+                    <div class="product-image" style="background: linear-gradient(135deg, #f2d5bc 0%, #e8c5a8 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #f2d5bc;"></div>
                     </div>
-                    <h3 class="product-name">Coral Dream</h3>
-                    <p class="product-desc">Fresh coral tone for vibrant days. This cheerful shade brightens your complexion while maintaining a soft, natural appearance. Perfect for adding a pop of color to your everyday look.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">03</span>
+                            <h3 class="product-name">Beige</h3>
+                        </div>
+                        <p class="product-desc">Light-medium with warm undertones for a sun-kissed glow. This versatile shade works beautifully for students and professionals. Buildable coverage from sheer to medium.</p>
+                        <div class="product-features">
+                            <span>✓ Warm undertone</span>
+                            <span>✓ Light-medium</span>
+                            <span>✓ Buildable</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #d8a4b8 0%, #c894a8 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="medium">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image" style="background: linear-gradient(135deg, #e8c5a8 0%, #deb598 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #e8c5a8;"></div>
                     </div>
-                    <h3 class="product-name">Berry Whisper</h3>
-                    <p class="product-desc">Subtle berry tone for gentle charm. A sophisticated shade that adds depth while remaining soft and wearable. Perfect for those who want a bit more color with elegance.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">04</span>
+                            <h3 class="product-name">Natural</h3>
+                        </div>
+                        <p class="product-desc">Medium tone with neutral undertones—our most popular shade. Perfectly balanced for Asian skin tones. Provides natural coverage that lasts all day without oxidizing.</p>
+                        <div class="product-features">
+                            <span>✓ Neutral undertone</span>
+                            <span>✓ Medium skin</span>
+                            <span>✓ All-day wear</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #f7c5d0 0%, #f0b5c0 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="medium">
+                    <div class="product-image" style="background: linear-gradient(135deg, #deb598 0%, #d4a588 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #deb598;"></div>
                     </div>
-                    <h3 class="product-name">Petal Pink</h3>
-                    <p class="product-desc">Soft petal pink that enhances your natural lip color. This gentle shade is perfect for creating a fresh-faced look that lasts all day. Lightweight and comfortable.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">05</span>
+                            <h3 class="product-name">Honey</h3>
+                        </div>
+                        <p class="product-desc">Medium with warm, golden undertones for a healthy glow. Perfect for those with olive or warm-toned skin. The honey shade enhances your natural radiance beautifully.</p>
+                        <div class="product-features">
+                            <span>✓ Warm undertone</span>
+                            <span>✓ Medium skin</span>
+                            <span>✓ Glowing finish</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #e8c4b8 0%, #deb4a8 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="medium">
+                    <div class="product-image" style="background: linear-gradient(135deg, #d4a588 0%, #ca9578 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #d4a588;"></div>
                     </div>
-                    <h3 class="product-name">Honey Nude</h3>
-                    <p class="product-desc">Warm honey nude with golden undertones. This rich yet natural shade is perfect for those with warm skin tones. Creates a polished, professional look effortlessly.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">06</span>
+                            <h3 class="product-name">Tan</h3>
+                        </div>
+                        <p class="product-desc">Medium-deep with warm undertones for deeper skin tones. Provides seamless coverage that looks like your skin, only better. Long-lasting formula that stays fresh all day.</p>
+                        <div class="product-features">
+                            <span>✓ Warm undertone</span>
+                            <span>✓ Medium-deep</span>
+                            <span>✓ Long-lasting</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #ffccd0 0%, #ffbcc5 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="deep">
+                    <div class="product-image" style="background: linear-gradient(135deg, #c08968 0%, #b67958 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #c08968;"></div>
                     </div>
-                    <h3 class="product-name">Blossom Pink</h3>
-                    <p class="product-desc">Fresh blossom pink that captures the essence of spring. This cheerful shade brings life to your face while maintaining a soft, natural finish. Perfect for everyday confidence.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">07</span>
+                            <h3 class="product-name">Caramel</h3>
+                        </div>
+                        <p class="product-desc">Deep with rich golden undertones for beautiful melanin-rich skin. This luxurious shade provides flawless coverage while enhancing your natural glow.</p>
+                        <div class="product-features">
+                            <span>✓ Golden undertone</span>
+                            <span>✓ Deep skin</span>
+                            <span>✓ Rich coverage</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #daa4b4 0%, #ca94a4 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="product-card" data-category="deep">
+                    <div class="product-image" style="background: linear-gradient(135deg, #a67352 0%, #9c6342 100%);">
+                        <div class="product-icon">🧴</div>
+                        <div class="shade-dot" style="background: #a67352;"></div>
                     </div>
-                    <h3 class="product-name">Mauve Mist</h3>
-                    <p class="product-desc">Sophisticated mauve with cool undertones. This elegant shade is perfect for creating a refined look that transitions seamlessly from day to night. Timeless and chic.</p>
-                    <span class="product-price">฿299</span>
-                    <button class="buy-button">Order Now</button>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <span class="shade-number">08</span>
+                            <h3 class="product-name">Mocha</h3>
+                        </div>
+                        <p class="product-desc">Our deepest shade with warm undertones for rich, dark skin tones. Delivers beautiful, even coverage without any ashiness. Celebrates the beauty of deep skin.</p>
+                        <div class="product-features">
+                            <span>✓ Warm undertone</span>
+                            <span>✓ Deep skin</span>
+                            <span>✓ Even coverage</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">฿399</span>
+                            <button class="buy-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,24 +262,75 @@
     <!-- Product Features -->
     <section class="promise-section">
         <div class="container">
-            <h2 class="section-title">What Makes Our Lipsticks Special</h2>
+            <h2 class="section-title">What Makes Our Foundation Special</h2>
             <div class="promise-grid">
                 <div class="promise-card">
                     <div class="promise-icon">💧</div>
-                    <h3>Moisturizing Formula</h3>
-                    <p>Enriched with natural oils and vitamin E to keep your lips soft, smooth, and hydrated throughout the day.</p>
+                    <h3>Hydrating Formula</h3>
+                    <p>Infused with hyaluronic acid, glycerin, and vitamin E to keep your skin moisturized and comfortable all day long.</p>
                 </div>
 
                 <div class="promise-card">
                     <div class="promise-icon">⏰</div>
-                    <h3>Long-lasting Wear</h3>
-                    <p>Our advanced formula ensures your color stays vibrant for hours without the need for constant touch-ups.</p>
+                    <h3>12-Hour Wear</h3>
+                    <p>Our long-lasting formula stays fresh and doesn't oxidize, fade, or cake throughout your busy day.</p>
+                </div>
+
+                <div class="promise-card">
+                    <div class="promise-icon">☀️</div>
+                    <h3>SPF 30 Protection</h3>
+                    <p>Broad-spectrum sun protection shields your skin from harmful UVA and UVB rays while you look flawless.</p>
                 </div>
 
                 <div class="promise-card">
                     <div class="promise-icon">🌿</div>
-                    <h3>Safe Ingredients</h3>
-                    <p>Carefully selected ingredients that are gentle on sensitive skin. Dermatologically tested and approved.</p>
+                    <h3>Skin-Safe Ingredients</h3>
+                    <p>Non-comedogenic, dermatologically tested, and free from parabens and harmful chemicals. Safe for sensitive skin.</p>
+                </div>
+
+                <div class="promise-card">
+                    <div class="promise-icon">✨</div>
+                    <h3>Buildable Coverage</h3>
+                    <p>Go from sheer to medium coverage effortlessly. Layer it up for blemishes or keep it light for a natural finish.</p>
+                </div>
+
+                <div class="promise-card">
+                    <div class="promise-icon">🎨</div>
+                    <h3>8 Perfect Shades</h3>
+                    <p>Carefully curated shade range designed specifically for Asian skin tones—from porcelain to deep mocha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Choose Your Shade -->
+    <section class="shade-guide-section">
+        <div class="container">
+            <h2 class="section-title">How to Find Your Perfect Shade</h2>
+            <p class="section-subtitle">Follow our simple guide to match your skin tone</p>
+
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <div class="guide-number">1</div>
+                    <h3>Check Your Undertone</h3>
+                    <p><strong>Cool:</strong> Veins look blue/purple → Try Porcelain, Ivory</p>
+                    <p><strong>Neutral:</strong> Veins look blue-green → Try Ivory, Natural</p>
+                    <p><strong>Warm:</strong> Veins look green → Try Beige, Honey, Tan, Caramel, Mocha</p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-number">2</div>
+                    <h3>Determine Your Depth</h3>
+                    <p><strong>Light:</strong> Shades 01-03 (Porcelain to Beige)</p>
+                    <p><strong>Medium:</strong> Shades 04-06 (Natural to Tan)</p>
+                    <p><strong>Deep:</strong> Shades 07-08 (Caramel to Mocha)</p>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-number">3</div>
+                    <h3>Test on Your Jawline</h3>
+                    <p>The perfect shade disappears into your skin on your jawline. Not too light, not too dark—just right!</p>
+                    <p><em>Still unsure? Message us on LINE for personalized shade recommendations!</em></p>
                 </div>
             </div>
         </div>
@@ -160,36 +342,48 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>KissMoKa</h3>
-                    <p>Your natural beauty companion. Crafted with love for the modern woman.</p>
+                    <p>Your natural beauty companion. Premium foundation crafted with love for the modern woman.</p>
+                    <div class="footer-social">
+                        <a href="https://lin.ee/KissMoKa" target="_blank">📱</a>
+                        <a href="https://www.facebook.com/kissmoka" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/kissmoka.official" target="_blank">📷</a>
+                        <a href="https://www.tiktok.com/@kissmoka" target="_blank">🎵</a>
+                    </div>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Shop</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">Products</a></li>
-                        <li><a href="../why-us/index.html">Why Us</a></li>
-                        <li><a href="../content/index.html">Content</a></li>
-                        <li><a href="../faq/index.html">FAQ</a></li>
+                        <li><a href="index.html">All Products</a></li>
+                        <li><a href="index.html#bestsellers">Best Sellers</a></li>
+                        <li><a href="../content/index.html">Shade Guide</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Information</h4>
+                    <h4>Help</h4>
                     <ul>
+                        <li><a href="../faq/index.html">FAQ</a></li>
+                        <li><a href="../content/index.html">Beauty Guide</a></li>
                         <li><a href="../info/index.html">About Us</a></li>
+                        <li><a href="../why-us/index.html">Why Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
                         <li><a href="../policy/privacy.html">Privacy Policy</a></li>
                         <li><a href="../policy/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Connect With Us</h4>
+                    <h4>Order Now</h4>
                     <div class="social-buttons">
-                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE</a>
+                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE Official</a>
                         <a href="https://www.facebook.com/kissmoka" target="_blank" class="social-btn facebook">Facebook</a>
                         <a href="https://www.instagram.com/kissmoka.official" target="_blank" class="social-btn instagram">Instagram</a>
-                        <a href="https://www.tiktok.com/@kissmoka" target="_blank" class="social-btn tiktok">TikTok</a>
                     </div>
                 </div>
             </div>

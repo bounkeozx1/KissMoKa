@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KissMoKa - Your Natural Beauty Companion</title>
+    <title>KissMoKa Foundation - Your Natural Skin Companion</title>
+    
+    <!-- Google Fonts - Noto Sans Thai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">KissMoKa</a>
             <button class="mobile-toggle" id="mobileToggle">
@@ -19,9 +25,9 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="product/index.html">Product</a></li>
+                <li><a href="product/index.html">Products</a></li>
                 <li><a href="why-us/index.html">Why Us</a></li>
-                <li><a href="content/index.html">Content</a></li>
+                <li><a href="content/index.html">Beauty Guide</a></li>
                 <li><a href="faq/index.html">FAQ</a></li>
             </ul>
         </div>
@@ -29,99 +35,330 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <!-- Floating Foundation Bottles -->
+            <div class="foundation-bg foundation-1">🧴</div>
+            <div class="foundation-bg foundation-2">🧴</div>
+            <div class="foundation-bg foundation-3">🧴</div>
+            <div class="foundation-bg foundation-4">🧴</div>
+            <div class="foundation-bg foundation-5">🧴</div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">KissMoKa</h1>
-            <p class="hero-subtitle">Embrace Your Natural Beauty with Confidence</p>
-            <p class="hero-description">Soft, elegant, effortlessly you. Discover lipsticks designed for the modern woman who loves the no-makeup makeup look.</p>
+            <div class="hero-badge">✨ Premium Foundation</div>
+            <h1 class="hero-title">Your Skin, But Better</h1>
+            <p class="hero-subtitle">Lightweight, buildable coverage for flawless natural beauty</p>
+            <p class="hero-description">Discover foundation that feels like skincare. Perfect for students and young professionals who want effortless, all-day radiance.</p>
             <div class="hero-buttons">
-                <a href="product/index.html" class="btn btn-primary">Shop Now</a>
-                <a href="why-us/index.html" class="btn btn-secondary">Learn More</a>
+                <a href="product/index.html" class="btn btn-primary">
+                    <span>Find Your Shade</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="#shades" class="btn btn-secondary">View Shades</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Shades</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12h</div>
+                    <div class="stat-label">Lasting</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">SPF 30</div>
+                    <div class="stat-label">Protection</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Collection -->
-    <section class="featured-section">
+    <!-- Key Benefits Section -->
+    <section class="benefits-section">
         <div class="container">
-            <h2 class="section-title">Featured Collection</h2>
-            <p class="section-subtitle">Discover our signature shades crafted for everyday elegance</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💧</div>
+                    <h3>Hydrating Formula</h3>
+                    <p>Infused with hyaluronic acid and vitamin E for all-day moisture</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">☀️</div>
+                    <h3>SPF 30 Protection</h3>
+                    <p>Shield your skin from harmful UV rays while looking flawless</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Natural Finish</h3>
+                    <p>Buildable coverage from sheer to medium for that "no-makeup" glow</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Skin-Loving</h3>
+                    <p>Non-comedogenic, dermatologist-tested, safe for sensitive skin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shade Range Section -->
+    <section class="shade-section" id="shades">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find Your Perfect Match</h2>
+                <p class="section-subtitle">8 carefully curated shades for Asian skin tones</p>
+            </div>
             
-            <div class="product-preview">
-                <div class="product-card-mini">
-                    <div class="product-image-mini" style="background: linear-gradient(135deg, #ffc4d0 0%, #ffb3c1 100%);">
-                        <span class="lipstick-icon">💄</span>
+            <div class="shade-grid">
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #f5e5d8 0%, #ead5c3 100%);">
+                        <span class="shade-number">01</span>
                     </div>
-                    <h3>Soft Rose</h3>
-                    <p>Delicate pink</p>
-                    <span class="price">฿299</span>
+                    <div class="shade-info">
+                        <h3>Porcelain</h3>
+                        <p>Fair with cool undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
                 </div>
 
-                <div class="product-card-mini">
-                    <div class="product-image-mini" style="background: linear-gradient(135deg, #f5d7c8 0%, #efc9b8 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #f7e0cb 0%, #edd0b8 100%);">
+                        <span class="shade-number">02</span>
                     </div>
-                    <h3>Nude Blush</h3>
-                    <p>Natural nude</p>
-                    <span class="price">฿299</span>
+                    <div class="shade-info">
+                        <h3>Ivory</h3>
+                        <p>Light with neutral undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
                 </div>
 
-                <div class="product-card-mini">
-                    <div class="product-image-mini" style="background: linear-gradient(135deg, #ffb8a0 0%, #ffa890 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #f2d5bc 0%, #e8c5a8 100%);">
+                        <span class="shade-number">03</span>
                     </div>
-                    <h3>Coral Dream</h3>
-                    <p>Fresh coral</p>
-                    <span class="price">฿299</span>
+                    <div class="shade-info">
+                        <h3>Beige</h3>
+                        <p>Light-medium with warm undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
                 </div>
 
-                <div class="product-card-mini">
-                    <div class="product-image-mini" style="background: linear-gradient(135deg, #d8a4b8 0%, #c894a8 100%);">
-                        <span class="lipstick-icon">💄</span>
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #e8c5a8 0%, #deb598 100%);">
+                        <span class="shade-number">04</span>
                     </div>
-                    <h3>Berry Whisper</h3>
-                    <p>Subtle berry</p>
-                    <span class="price">฿299</span>
+                    <div class="shade-info">
+                        <h3>Natural</h3>
+                        <p>Medium with neutral undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
+                </div>
+
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #deb598 0%, #d4a588 100%);">
+                        <span class="shade-number">05</span>
+                    </div>
+                    <div class="shade-info">
+                        <h3>Honey</h3>
+                        <p>Medium with warm undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
+                </div>
+
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #d4a588 0%, #ca9578 100%);">
+                        <span class="shade-number">06</span>
+                    </div>
+                    <div class="shade-info">
+                        <h3>Tan</h3>
+                        <p>Medium-deep with warm undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
+                </div>
+
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #c08968 0%, #b67958 100%);">
+                        <span class="shade-number">07</span>
+                    </div>
+                    <div class="shade-info">
+                        <h3>Caramel</h3>
+                        <p>Deep with golden undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
+                </div>
+
+                <div class="shade-card">
+                    <div class="shade-swatch" style="background: linear-gradient(135deg, #a67352 0%, #9c6342 100%);">
+                        <span class="shade-number">08</span>
+                    </div>
+                    <div class="shade-info">
+                        <h3>Mocha</h3>
+                        <p>Deep with warm undertones</p>
+                        <span class="price">฿399</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="text-center">
-                <a href="product/index.html" class="btn btn-outline">View All Products</a>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="product/index.html" class="btn btn-primary btn-large">Shop All Shades</a>
             </div>
         </div>
     </section>
 
-    <!-- Brand Promise -->
-    <section class="promise-section">
+    <!-- How It Works Section -->
+    <section class="how-it-works">
         <div class="container">
-            <div class="promise-grid">
-                <div class="promise-card">
-                    <div class="promise-icon">✨</div>
-                    <h3>Natural Beauty</h3>
-                    <p>Enhance your features with our carefully curated shades for the perfect no-makeup makeup look.</p>
+            <h2 class="section-title">How to Apply</h2>
+            <p class="section-subtitle">3 simple steps to flawless skin</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🧴</div>
+                    <h3>Prep Your Skin</h3>
+                    <p>Start with clean, moisturized skin. Apply primer if desired for extra longevity.</p>
                 </div>
 
-                <div class="promise-card">
-                    <div class="promise-icon">💝</div>
-                    <h3>Gentle Formula</h3>
-                    <p>Safe for daily wear with moisturizing ingredients that care for your delicate lips.</p>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">💆‍♀️</div>
+                    <h3>Apply Foundation</h3>
+                    <p>Use a brush, sponge, or fingers. Start from the center and blend outward.</p>
                 </div>
 
-                <div class="promise-card">
-                    <div class="promise-icon">🌸</div>
-                    <h3>Confident You</h3>
-                    <p>Feel beautiful and empowered every day, from class to work and everything in between.</p>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">✨</div>
+                    <h3>Build & Set</h3>
+                    <p>Layer for more coverage. Set with powder or mist for all-day wear.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- Why Choose KissMoKa -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-content">
+                <div class="why-text">
+                    <h2>Why Choose KissMoKa Foundation?</h2>
+                    <p class="lead">We understand the modern woman's needs—quality makeup that doesn't break the bank.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <div>
+                                <h4>Affordable Luxury</h4>
+                                <p>Premium quality at student-friendly prices (฿399)</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <div>
+                                <h4>Perfect for Daily Wear</h4>
+                                <p>Lightweight formula that lasts from class to dinner</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <div>
+                                <h4>Skin-Safe Ingredients</h4>
+                                <p>Dermatologist-tested, cruelty-free formula</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17L4 12" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <div>
+                                <h4>Natural Finish</h4>
+                                <p>Your skin, but better—never cakey or heavy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="why-us/index.html" class="btn btn-outline">Learn More About Us</a>
+                </div>
+
+                <div class="why-image">
+                    <div class="image-placeholder">
+                        <div class="product-showcase">
+                            <div class="showcase-item">🧴</div>
+                            <div class="showcase-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Perfect for my oily skin! It stays matte all day without looking heavy. Love shade 03!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👩</div>
+                        <div>
+                            <strong>Pim</strong>
+                            <span>University Student</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Finally found a foundation that doesn't make me break out. The coverage is buildable and natural."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👩‍💼</div>
+                        <div>
+                            <strong>May</strong>
+                            <span>Office Worker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Best foundation for the price! The SPF 30 is a huge bonus. I'm on my third bottle!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👱‍♀️</div>
+                        <div>
+                            <strong>Mook</strong>
+                            <span>Freelancer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Discover Your Perfect Shade?</h2>
-            <p>Join thousands of women who've found their confidence with KissMoKa</p>
-            <a href="product/index.html" class="btn btn-primary btn-large">Explore Collection</a>
+            <div class="cta-content">
+                <h2>Ready to Find Your Perfect Shade?</h2>
+                <p>Join thousands of women who've discovered their confidence with KissMoKa Foundation</p>
+                <div class="cta-buttons">
+                    <a href="product/index.html" class="btn btn-primary btn-large">Shop Now - ฿399</a>
+                    <a href="faq/index.html" class="btn btn-secondary btn-large">Have Questions?</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -131,36 +368,49 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>KissMoKa</h3>
-                    <p>Your natural beauty companion. Crafted with love for the modern woman.</p>
+                    <p>Your natural beauty companion. Premium foundation crafted with love for the modern woman.</p>
+                    <div class="footer-social">
+                        <a href="https://lin.ee/KissMoKa" target="_blank">📱</a>
+                        <a href="https://www.facebook.com/kissmoka" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/kissmoka.official" target="_blank">📷</a>
+                        <a href="https://www.tiktok.com/@kissmoka" target="_blank">🎵</a>
+                    </div>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Shop</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="product/index.html">Products</a></li>
-                        <li><a href="why-us/index.html">Why Us</a></li>
-                        <li><a href="content/index.html">Content</a></li>
-                        <li><a href="faq/index.html">FAQ</a></li>
+                        <li><a href="product/index.html">All Products</a></li>
+                        <li><a href="product/index.html#bestsellers">Best Sellers</a></li>
+                        <li><a href="product/index.html#new">New Arrivals</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Information</h4>
+                    <h4>Help</h4>
                     <ul>
+                        <li><a href="faq/index.html">FAQ</a></li>
+                        <li><a href="content/index.html">Shade Guide</a></li>
                         <li><a href="info/index.html">About Us</a></li>
+                        <li><a href="why-us/index.html">Why Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
                         <li><a href="policy/privacy.html">Privacy Policy</a></li>
                         <li><a href="policy/terms.html">Terms of Service</a></li>
+                        <li><a href="policy/shipping.html">Shipping Policy</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Connect With Us</h4>
+                    <h4>Order Now</h4>
                     <div class="social-buttons">
-                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE</a>
+                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE Official</a>
                         <a href="https://www.facebook.com/kissmoka" target="_blank" class="social-btn facebook">Facebook</a>
                         <a href="https://www.instagram.com/kissmoka.official" target="_blank" class="social-btn instagram">Instagram</a>
-                        <a href="https://www.tiktok.com/@kissmoka" target="_blank" class="social-btn tiktok">TikTok</a>
                     </div>
                 </div>
             </div>
