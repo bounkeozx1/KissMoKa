@@ -23,6 +23,113 @@
     --transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ========================
+   DARK MODE VARIABLES
+======================== */
+html.dark-mode {
+    --primary-color: #e5a5b0;
+    --primary-dark: #d4949f;
+    --primary-light: #3a2a2e;
+    --text-dark: #e8e8e8;
+    --text-gray: #b8b8b8;
+    --text-light: #999;
+    --bg-light: #1a1a1a;
+    --white: #252525;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode body {
+    background: var(--bg-light);
+    color: var(--text-gray);
+}
+
+html.dark-mode .hero,
+html.dark-mode .page-header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+html.dark-mode .shade-section,
+html.dark-mode .promise-section,
+html.dark-mode .shade-guide-section {
+    background: linear-gradient(180deg, #1a1a1a 0%, #252525 100%);
+}
+
+html.dark-mode .cta-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+}
+
+html.dark-mode .step-card,
+html.dark-mode .testimonial-card {
+    background: #2a2a2a;
+}
+
+html.dark-mode .hero-background .foundation-bg {
+    opacity: 0.03;
+}
+
+html.dark-mode .filter-btn {
+    border-color: #444;
+    color: var(--text-gray);
+}
+
+html.dark-mode .filter-btn:hover,
+html.dark-mode .filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1a1a1a;
+}
+
+html.dark-mode .product-features span {
+    background: #2a2a2a;
+    color: var(--text-gray);
+}
+
+html.dark-mode .product-footer {
+    border-top-color: #333;
+}
+
+html.dark-mode .footer {
+    background: #0d0d0d;
+}
+
+html.dark-mode .footer-bottom {
+    border-top-color: #222;
+}
+
+html.dark-mode .navbar {
+    background: rgba(37, 37, 37, 0.95);
+}
+
+html.dark-mode .navbar.scrolled {
+    background: rgba(37, 37, 37, 0.98);
+}
+
+html.dark-mode .hero-stats {
+    border-top-color: rgba(212, 148, 159, 0.3);
+}
+
+html.dark-mode .image-placeholder {
+    background: linear-gradient(135deg, rgba(58, 42, 46, 0.6) 0%, rgba(42, 42, 42, 0.6) 100%);
+}
+
+html.dark-mode .promise-card {
+    background: rgba(42, 42, 42, 0.5);
+}
+
+html.dark-mode .promise-card:hover {
+    background: rgba(42, 42, 42, 0.8);
+}
+
+html.dark-mode .filter-section {
+    border-bottom-color: #333;
+}
+
+html.dark-mode .faq-question:hover {
+    background: rgba(42, 42, 42, 0.5);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -35,12 +142,95 @@ body {
     background: var(--bg-light);
     line-height: 1.7;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
+}
+
+/* ========================
+   DARK MODE TOGGLE BUTTON
+======================== */
+.dark-mode-toggle {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
+    transition: var(--transition-fast);
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(212, 148, 159, 0.4);
+}
+
+.dark-mode-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: var(--transition-fast);
+}
+
+.dark-mode-toggle .sun-icon {
+    display: block;
+}
+
+.dark-mode-toggle .moon-icon {
+    display: none;
+}
+
+html.dark-mode .dark-mode-toggle .sun-icon {
+    display: none;
+}
+
+html.dark-mode .dark-mode-toggle .moon-icon {
+    display: block;
+}
+
+/* ========================
+   SCROLL TO TOP BUTTON
+======================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+    box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
 }
 
 /* ========================
@@ -231,7 +421,7 @@ body {
 .hero-badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background: rgba(212, 148, 159, 0.1);
+    background: rgba(212, 148, 159, 0.15);
     color: var(--primary-dark);
     border-radius: 30px;
     font-size: 0.85rem;
@@ -335,7 +525,7 @@ body {
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
 }
 
@@ -353,7 +543,7 @@ body {
 
 .btn-secondary:hover {
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
@@ -391,10 +581,13 @@ body {
     text-align: center;
     padding: 2rem;
     transition: var(--transition-fast);
+    background: rgba(212, 148, 159, 0.03);
+    border-radius: 15px;
 }
 
 .benefit-card:hover {
     transform: translateY(-5px);
+    background: rgba(212, 148, 159, 0.08);
 }
 
 .benefit-icon {
@@ -475,7 +668,8 @@ body {
 .shade-number {
     font-size: 4rem;
     font-weight: 200;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .shade-info {
@@ -521,7 +715,7 @@ body {
 .step-card {
     text-align: center;
     padding: 2.5rem;
-    background: #fef5f7;
+    background: rgba(254, 245, 247, 0.6);
     border-radius: 20px;
     position: relative;
     transition: var(--transition-fast);
@@ -540,7 +734,7 @@ body {
     width: 50px;
     height: 50px;
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -629,7 +823,7 @@ body {
 }
 
 .image-placeholder {
-    background: linear-gradient(135deg, #fef5f7 0%, #f5e6e8 100%);
+    background: linear-gradient(135deg, rgba(254, 245, 247, 0.6) 0%, rgba(245, 230, 232, 0.6) 100%);
     border-radius: 30px;
     height: 500px;
     display: flex;
@@ -696,7 +890,7 @@ body {
 }
 
 .testimonial-card {
-    background: #fef5f7;
+    background: rgba(254, 245, 247, 0.6);
     padding: 2.5rem;
     border-radius: 20px;
     transition: var(--transition-fast);
@@ -747,7 +941,7 @@ body {
 ======================== */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #fef5f7 0%, #f5e6e8 100%);
+    background: linear-gradient(135deg, rgba(254, 245, 247, 0.8) 0%, rgba(245, 230, 232, 0.8) 100%);
     text-align: center;
 }
 
@@ -807,7 +1001,7 @@ body {
 
 .badge {
     padding: 0.5rem 1.5rem;
-    background: rgba(212, 148, 159, 0.1);
+    background: rgba(212, 148, 159, 0.15);
     color: var(--primary-dark);
     border-radius: 25px;
     font-size: 0.85rem;
@@ -847,7 +1041,7 @@ body {
 .filter-btn.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
 }
 
 /* ========================
@@ -883,7 +1077,7 @@ body {
     top: 1rem;
     right: 1rem;
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -959,7 +1153,7 @@ body {
 .product-features span {
     font-size: 0.85rem;
     color: var(--text-gray);
-    background: #f5f5f5;
+    background: rgba(245, 245, 245, 0.8);
     padding: 0.4rem 1rem;
     border-radius: 15px;
 }
@@ -981,7 +1175,7 @@ body {
 .buy-button {
     padding: 0.8rem 2rem;
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -1026,7 +1220,7 @@ body {
     width: 50px;
     height: 50px;
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1064,7 +1258,7 @@ body {
 ======================== */
 .promise-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #fff 0%, #fef5f7 100%);
+    background: linear-gradient(135deg, #fff 0%, rgba(254, 245, 247, 0.6) 100%);
 }
 
 .promise-grid {
@@ -1079,10 +1273,13 @@ body {
     text-align: center;
     padding: 2rem;
     transition: var(--transition-fast);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
 }
 
 .promise-card:hover {
     transform: translateY(-5px);
+    background: rgba(254, 245, 247, 0.8);
 }
 
 .promise-icon {
@@ -1189,7 +1386,7 @@ body {
 }
 
 .faq-question:hover {
-    background: #fef5f7;
+    background: rgba(254, 245, 247, 0.5);
 }
 
 .faq-question h3 {
@@ -1236,6 +1433,10 @@ body {
     background: var(--text-dark);
     color: #999;
     padding: 4rem 0 2rem;
+}
+
+html.dark-mode .footer {
+    background: #0d0d0d;
 }
 
 .footer-content {
@@ -1319,7 +1520,7 @@ body {
 
 .social-btn.line {
     background: #06C755;
-    color: var(--white);
+    color: #ffffff;
 }
 
 .social-btn.line:hover {
@@ -1329,7 +1530,7 @@ body {
 
 .social-btn.facebook {
     background: #1877f2;
-    color: var(--white);
+    color: #ffffff;
 }
 
 .social-btn.facebook:hover {
@@ -1339,7 +1540,7 @@ body {
 
 .social-btn.instagram {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: var(--white);
+    color: #ffffff;
 }
 
 .social-btn.instagram:hover {
@@ -1349,7 +1550,7 @@ body {
 
 .social-btn.tiktok {
     background: #000000;
-    color: var(--white);
+    color: #ffffff;
 }
 
 .social-btn.tiktok:hover {
@@ -1412,6 +1613,14 @@ body {
 
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .dark-mode-toggle {
+        right: 20px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
     }
 }
 
@@ -1491,5 +1700,18 @@ body {
     .steps-grid,
     .guide-steps {
         grid-template-columns: 1fr;
+    }
+
+    .dark-mode-toggle {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+    }
+
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 15px;
     }
 }

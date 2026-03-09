@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KissMoKa Foundation - Your Natural Skin Companion</title>
+    <title>KissMoKa - Your Natural Beauty Companion</title>
+    
+    <!-- CRITICAL: Dark Mode Script - Must Load FIRST -->
+    <script>
+        // Check dark mode BEFORE page renders to prevent flash
+        (function() {
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
     
     <!-- Google Fonts - Noto Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +26,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">KissMoKa</a>
             <button class="mobile-toggle" id="mobileToggle">
@@ -33,7 +44,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Lipstick Background -->
     <section class="hero">
         <div class="hero-background">
             <!-- Floating Foundation Bottles -->

@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty Guide - KissMoKa Foundation</title>
     
+    <!-- CRITICAL: Dark Mode Script - Must Load FIRST -->
+<script>
+    (function() {
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    })();
+</script>
+    
     <!-- Google Fonts - Noto Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

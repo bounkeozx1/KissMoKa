@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 </head>
+
+<!-- CRITICAL: Dark Mode Script - Must Load FIRST -->
+<script>
+    (function() {
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    })();
+</script>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
