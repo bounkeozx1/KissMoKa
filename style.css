@@ -16,11 +16,13 @@
     --text-light: #888;
     --bg-light: #fafafa;
     --white: #ffffff;
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 40px rgba(212, 148, 159, 0.15);
-    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 4px 15px rgba(212, 148, 159, 0.15);
+    --shadow: 0 8px 25px rgba(212, 148, 159, 0.2);
+    --shadow-lg: 0 15px 45px rgba(212, 148, 159, 0.25);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition-fast: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ========================
@@ -35,9 +37,10 @@ html.dark-mode {
     --text-light: #999;
     --bg-light: #1a1a1a;
     --white: #252525;
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
-    --shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 html.dark-mode body {
@@ -142,13 +145,31 @@ body {
     background: var(--bg-light);
     line-height: 1.7;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
+}
+
+/* ========================
+   PAGE TRANSITION
+======================== */
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ========================
@@ -159,8 +180,8 @@ body {
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: var(--primary-color);
     border: none;
@@ -169,18 +190,22 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 999;
-    box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
+    box-shadow: var(--shadow);
     transition: var(--transition-fast);
 }
 
 .dark-mode-toggle:hover {
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(212, 148, 159, 0.4);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: var(--shadow-lg);
+}
+
+.dark-mode-toggle:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .dark-mode-toggle svg {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     color: white;
     transition: var(--transition-fast);
 }
@@ -208,19 +233,22 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: var(--primary-color);
     color: white;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: var(--transition-fast);
     z-index: 998;
-    box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-to-top.visible {
@@ -230,7 +258,12 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .scroll-to-top:hover {
     background: var(--primary-dark);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
 }
 
 /* ========================
@@ -238,14 +271,14 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 ======================== */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     padding: 1.2rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+    transition: var(--transition-fast);
 }
 
 .navbar.scrolled {
@@ -329,7 +362,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     height: 2px;
     background: var(--primary-color);
     margin: 3px 0;
-    transition: var(--transition);
+    transition: var(--transition-fast);
 }
 
 /* ========================
@@ -359,8 +392,10 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .foundation-bg {
     position: absolute;
     font-size: 8rem;
-    opacity: 0.08;
+    opacity: 0.12;
+    filter: blur(1px);
     animation: float 20s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(212, 148, 159, 0.3);
 }
 
 .foundation-1 {
@@ -408,26 +443,33 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(212, 148, 159, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(212, 148, 159, 0.15) 0%, transparent 50%);
 }
 
 .hero-content {
     max-width: 700px;
     position: relative;
     z-index: 2;
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hero-badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background: rgba(212, 148, 159, 0.15);
+    background: rgba(212, 148, 159, 0.2);
     color: var(--primary-dark);
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(212, 148, 159, 0.15);
+    transition: var(--transition-fast);
+}
+
+.hero-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 148, 159, 0.2);
 }
 
 .hero-title {
@@ -464,11 +506,16 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     display: flex;
     gap: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(212, 148, 159, 0.2);
+    border-top: 1px solid rgba(212, 148, 159, 0.3);
 }
 
 .stat-item {
     text-align: center;
+    transition: var(--transition-fast);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
 }
 
 .stat-number {
@@ -515,24 +562,28 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn:hover::before {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+}
+
+.btn:active {
+    transform: scale(0.95);
 }
 
 .btn-primary {
     background: var(--primary-color);
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(212, 148, 159, 0.3);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 148, 159, 0.4);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
 }
 
 .btn-secondary {
@@ -544,7 +595,8 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: #ffffff;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-outline {
@@ -556,6 +608,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .btn-outline:hover {
     background: var(--text-gray);
     color: var(--white);
+    transform: translateY(-4px);
 }
 
 .btn-large {
@@ -579,20 +632,28 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .benefit-card {
     text-align: center;
-    padding: 2rem;
-    transition: var(--transition-fast);
-    background: rgba(212, 148, 159, 0.03);
-    border-radius: 15px;
+    padding: 2.5rem;
+    transition: var(--transition-smooth);
+    background: rgba(212, 148, 159, 0.05);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
-    background: rgba(212, 148, 159, 0.08);
+    transform: translateY(-10px);
+    background: rgba(212, 148, 159, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .benefit-icon {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    display: inline-block;
+    transition: var(--transition-fast);
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .benefit-card h3 {
@@ -646,13 +707,13 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition-fast);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
     cursor: pointer;
 }
 
 .shade-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
@@ -663,13 +724,18 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.shade-card:hover .shade-swatch {
+    transform: scale(1.05);
 }
 
 .shade-number {
     font-size: 4rem;
     font-weight: 200;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .shade-info {
@@ -714,38 +780,52 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .step-card {
     text-align: center;
-    padding: 2.5rem;
-    background: rgba(254, 245, 247, 0.6);
-    border-radius: 20px;
+    padding: 3rem 2.5rem 2.5rem;
+    background: rgba(254, 245, 247, 0.7);
+    border-radius: 25px;
     position: relative;
-    transition: var(--transition-fast);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
 }
 
 .step-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow);
 }
 
 .step-number {
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: var(--primary-color);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.step-card:hover .step-number {
+    transform: translateX(-50%) scale(1.15);
+    box-shadow: var(--shadow);
 }
 
 .step-icon {
     font-size: 4rem;
     margin: 2rem 0 1.5rem;
+    display: inline-block;
+    transition: var(--transition-fast);
+}
+
+.step-card:hover .step-icon {
+    transform: scale(1.1);
 }
 
 .step-card h3 {
@@ -799,11 +879,24 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     gap: 1.5rem;
     margin-bottom: 2rem;
     align-items: flex-start;
+    transition: var(--transition-fast);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.feature-item:hover {
+    background: rgba(212, 148, 159, 0.05);
+    transform: translateX(10px);
 }
 
 .feature-item svg {
     flex-shrink: 0;
     margin-top: 0.25rem;
+    transition: var(--transition-fast);
+}
+
+.feature-item:hover svg {
+    transform: scale(1.2);
 }
 
 .feature-item h4 {
@@ -823,7 +916,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 .image-placeholder {
-    background: linear-gradient(135deg, rgba(254, 245, 247, 0.6) 0%, rgba(245, 230, 232, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(254, 245, 247, 0.8) 0%, rgba(245, 230, 232, 0.8) 100%);
     border-radius: 30px;
     height: 500px;
     display: flex;
@@ -831,6 +924,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-card);
 }
 
 .product-showcase {
@@ -857,9 +951,9 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(212, 148, 159, 0.3) 0%, transparent 70%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(212, 148, 159, 0.4) 0%, transparent 70%);
     animation: pulse 3s ease-in-out infinite;
 }
 
@@ -890,14 +984,15 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 .testimonial-card {
-    background: rgba(254, 245, 247, 0.6);
+    background: rgba(254, 245, 247, 0.7);
     padding: 2.5rem;
-    border-radius: 20px;
-    transition: var(--transition-fast);
+    border-radius: 25px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow);
 }
 
@@ -941,7 +1036,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 ======================== */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, rgba(254, 245, 247, 0.8) 0%, rgba(245, 230, 232, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(254, 245, 247, 0.9) 0%, rgba(245, 230, 232, 0.9) 100%);
     text-align: center;
 }
 
@@ -1001,12 +1096,19 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .badge {
     padding: 0.5rem 1.5rem;
-    background: rgba(212, 148, 159, 0.15);
+    background: rgba(212, 148, 159, 0.2);
     color: var(--primary-dark);
     border-radius: 25px;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(212, 148, 159, 0.15);
+    transition: var(--transition-fast);
+}
+
+.badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(212, 148, 159, 0.2);
 }
 
 /* ========================
@@ -1037,11 +1139,22 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     transition: var(--transition-fast);
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
 .filter-btn.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
 }
 
 /* ========================
@@ -1060,15 +1173,15 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .product-card {
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition-fast);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
     position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -1083,6 +1196,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     font-size: 0.8rem;
     font-weight: 400;
     z-index: 10;
+    box-shadow: var(--shadow-sm);
 }
 
 .product-image {
@@ -1092,6 +1206,11 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
 }
 
 .product-icon {
@@ -1104,11 +1223,11 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: 3px solid white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .product-content {
@@ -1153,9 +1272,14 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .product-features span {
     font-size: 0.85rem;
     color: var(--text-gray);
-    background: rgba(245, 245, 245, 0.8);
+    background: rgba(245, 245, 245, 0.9);
     padding: 0.4rem 1rem;
     border-radius: 15px;
+    transition: var(--transition-fast);
+}
+
+.product-features span:hover {
+    background: rgba(212, 148, 159, 0.1);
 }
 
 .product-footer {
@@ -1182,11 +1306,17 @@ html.dark-mode .dark-mode-toggle .moon-icon {
     font-size: 0.95rem;
     font-weight: 400;
     transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
 }
 
 .buy-button:hover {
     background: var(--primary-dark);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.buy-button:active {
+    transform: translateY(0);
 }
 
 /* ========================
@@ -1207,26 +1337,39 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .guide-step {
     background: var(--white);
     padding: 3rem 2rem 2rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
+    border-radius: 25px;
+    box-shadow: var(--shadow-card);
     position: relative;
+    transition: var(--transition-smooth);
+}
+
+.guide-step:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
 }
 
 .guide-number {
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: var(--primary-color);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.guide-step:hover .guide-number {
+    transform: translateX(-50%) scale(1.15);
+    box-shadow: var(--shadow);
 }
 
 .guide-step h3 {
@@ -1258,7 +1401,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 ======================== */
 .promise-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #fff 0%, rgba(254, 245, 247, 0.6) 100%);
+    background: linear-gradient(135deg, #fff 0%, rgba(254, 245, 247, 0.7) 100%);
 }
 
 .promise-grid {
@@ -1271,20 +1414,28 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 
 .promise-card {
     text-align: center;
-    padding: 2rem;
-    transition: var(--transition-fast);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
+    padding: 2.5rem;
+    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
 }
 
 .promise-card:hover {
-    transform: translateY(-5px);
-    background: rgba(254, 245, 247, 0.8);
+    transform: translateY(-10px);
+    background: rgba(254, 245, 247, 0.9);
+    box-shadow: var(--shadow);
 }
 
 .promise-icon {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: var(--transition-fast);
+}
+
+.promise-card:hover .promise-icon {
+    transform: scale(1.15) rotate(5deg);
 }
 
 .promise-card h3 {
@@ -1364,10 +1515,10 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .faq-item {
     background: var(--white);
     margin-bottom: 1.5rem;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-fast);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
 }
 
 .faq-item:hover {
@@ -1386,7 +1537,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 }
 
 .faq-question:hover {
-    background: rgba(254, 245, 247, 0.5);
+    background: rgba(254, 245, 247, 0.6);
 }
 
 .faq-question h3 {
@@ -1412,7 +1563,7 @@ html.dark-mode .dark-mode-toggle .moon-icon {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .faq-answer-content {
@@ -1479,7 +1630,7 @@ html.dark-mode .footer {
 }
 
 .footer-social a:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 .footer-section ul {
@@ -1499,6 +1650,8 @@ html.dark-mode .footer {
 
 .footer-section a:hover {
     color: var(--primary-color);
+    transform: translateX(5px);
+    display: inline-block;
 }
 
 .social-buttons {
@@ -1525,7 +1678,8 @@ html.dark-mode .footer {
 
 .social-btn.line:hover {
     background: #05b34d;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(6, 199, 85, 0.3);
 }
 
 .social-btn.facebook {
@@ -1535,7 +1689,8 @@ html.dark-mode .footer {
 
 .social-btn.facebook:hover {
     background: #1565d8;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(24, 119, 242, 0.3);
 }
 
 .social-btn.instagram {
@@ -1545,7 +1700,8 @@ html.dark-mode .footer {
 
 .social-btn.instagram:hover {
     opacity: 0.9;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(220, 39, 67, 0.3);
 }
 
 .social-btn.tiktok {
@@ -1555,7 +1711,8 @@ html.dark-mode .footer {
 
 .social-btn.tiktok:hover {
     background: #1a1a1a;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .footer-bottom {
@@ -1637,7 +1794,7 @@ html.dark-mode .footer {
         background: var(--white);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         box-shadow: var(--shadow);
         padding: 2rem 0;
         gap: 0;
@@ -1703,14 +1860,14 @@ html.dark-mode .footer {
     }
 
     .dark-mode-toggle {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         right: 15px;
     }
 
     .scroll-to-top {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         bottom: 20px;
         right: 15px;
     }
