@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KissMoKa - Your Natural Beauty Companion</title>
-    
+    <meta name="description" content="Premium foundation in 8 shades crafted for Asian skin tones. Lightweight, buildable coverage with SPF 30. ฿399.">
+    <meta property="og:title" content="KissMoKa — Your Skin, But Better">
+    <meta property="og:description" content="Premium foundation in 8 shades for Asian skin tones. SPF 30, 12-hour wear, ฿399.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bounkeozx1.github.io/KissMoKa/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4949f">
+
     <!-- CRITICAL: Dark Mode Script - Must Load FIRST -->
     <script>
         // Check dark mode BEFORE page renders to prevent flash
@@ -35,17 +43,39 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="product/index.html">Products</a></li>
-                <li><a href="why-us/index.html">Why Us</a></li>
-                <li><a href="content/index.html">Beauty Guide</a></li>
-                <li><a href="faq/index.html">FAQ</a></li>
+                <li><a href="index.html" class="active" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="product/index.html" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="faq/index.html" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
             </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
         </div>
     </nav>
 
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages, ingredients…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
     <!-- Hero Section with Lipstick Background -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline src="myvideo.mp4"></video>
         <div class="hero-background">
             <!-- Floating Foundation Bottles -->
             <div class="foundation-bg foundation-1">🧴</div>
@@ -373,6 +403,39 @@
         </div>
     </section>
 
+    <!-- Loyalty Teaser -->
+    <section class="loyalty-section">
+        <div class="container">
+            <span class="coming-soon-badge">Coming Soon</span>
+            <span class="loyalty-icon">💎</span>
+            <h2 class="section-title" data-en="KissMoKa Rewards" data-th="โปรแกรมสะสมแต้ม">KissMoKa Rewards</h2>
+            <p class="section-subtitle" data-en="Earn points on every purchase and unlock exclusive perks" data-th="สะสมแต้มทุกการซื้อ แลกรับสิทธิพิเศษ">Earn points on every purchase and unlock exclusive perks</p>
+            <div class="loyalty-perks">
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">⭐</span>
+                    <span class="loyalty-perk-name" data-en="Earn Points" data-th="สะสมแต้ม">Earn Points</span>
+                    <span class="loyalty-perk-desc">฿1 = 1 point</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🎁</span>
+                    <span class="loyalty-perk-name" data-en="Free Products" data-th="ของรางวัล">Free Products</span>
+                    <span class="loyalty-perk-desc">Redeem at 500 pts</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🚚</span>
+                    <span class="loyalty-perk-name" data-en="Free Shipping" data-th="ส่งฟรี">Free Shipping</span>
+                    <span class="loyalty-perk-desc">For members</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🎀</span>
+                    <span class="loyalty-perk-name" data-en="VIP Access" data-th="สิทธิ์พิเศษ">VIP Access</span>
+                    <span class="loyalty-perk-desc">Early launches</span>
+                </div>
+            </div>
+            <a href="loyalty/index.html" class="btn btn-primary" data-en="Learn More" data-th="เรียนรู้เพิ่มเติม">Learn More</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -404,15 +467,18 @@
                         <li><a href="content/index.html">Shade Guide</a></li>
                         <li><a href="info/index.html">About Us</a></li>
                         <li><a href="why-us/index.html">Why Us</a></li>
+                        <li><a href="contact/index.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h4>Explore</h4>
                     <ul>
+                        <li><a href="quiz/index.html">Shade Quiz</a></li>
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="ingredients/index.html">Ingredients</a></li>
+                        <li><a href="loyalty/index.html">Rewards</a></li>
                         <li><a href="policy/privacy.html">Privacy Policy</a></li>
-                        <li><a href="policy/terms.html">Terms of Service</a></li>
-                        <li><a href="policy/shipping.html">Shipping Policy</a></li>
                     </ul>
                 </div>
 

@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation Products - KissMoKa</title>
-    
+    <meta name="description" content="8 shades of KissMoKa Foundation for Asian skin tones. SPF 30, 12-hour wear, ฿399. Light, medium and deep coverage.">
+    <meta property="og:title" content="KissMoKa Foundation Collection — 8 Shades">
+    <meta property="og:description" content="Find your perfect shade. Lightweight foundation with SPF 30 for all skin tones. ฿399.">
+    <meta property="og:type" content="product">
+    <meta name="theme-color" content="#d4949f">
+    <link rel="manifest" href="../manifest.json">
+
     <!-- CRITICAL: Dark Mode Script - Must Load FIRST -->
     <script>
         (function() {
@@ -34,14 +40,35 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html" class="active">Products</a></li>
-                <li><a href="../why-us/index.html">Why Us</a></li>
-                <li><a href="../content/index.html">Beauty Guide</a></li>
-                <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../index.html" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="index.html" class="active" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="../why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="../content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="../faq/index.html" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
             </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -83,7 +110,12 @@
                             <span class="shade-number">01</span>
                             <h3 class="product-name">Porcelain</h3>
                         </div>
-                        <p class="product-desc">Perfect for fair skin with cool undertones. This ultra-light shade provides natural coverage while letting your skin breathe. Ideal for those seeking a barely-there finish.</p>
+                        <p class="product-desc">Perfect for fair skin with cool undertones. Ultra-light coverage that lets your skin breathe.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot active" style="background:#f5e5d8;" data-c1="#f5e5d8" data-c2="#ead5c3" title="Porcelain"></span>
+                            <span class="swatch-dot" style="background:#f7e0cb;" data-c1="#f7e0cb" data-c2="#edd0b8" title="Ivory"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Cool undertone</span>
                             <span>✓ Fair skin</span>
@@ -107,7 +139,13 @@
                             <span class="shade-number">02</span>
                             <h3 class="product-name">Ivory</h3>
                         </div>
-                        <p class="product-desc">Light shade with neutral undertones that adapts to your skin. Provides a natural, radiant finish perfect for everyday wear. Great for those who want balanced coverage.</p>
+                        <p class="product-desc">Light shade with neutral undertones that adapts to your skin. Natural, radiant finish for everyday wear.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#f5e5d8;" data-c1="#f5e5d8" data-c2="#ead5c3" title="Porcelain"></span>
+                            <span class="swatch-dot active" style="background:#f7e0cb;" data-c1="#f7e0cb" data-c2="#edd0b8" title="Ivory"></span>
+                            <span class="swatch-dot" style="background:#f2d5bc;" data-c1="#f2d5bc" data-c2="#e8c5a8" title="Beige"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Neutral undertone</span>
                             <span>✓ Light skin</span>
@@ -132,7 +170,13 @@
                             <span class="shade-number">03</span>
                             <h3 class="product-name">Beige</h3>
                         </div>
-                        <p class="product-desc">Light-medium with warm undertones for a sun-kissed glow. This versatile shade works beautifully for students and professionals. Buildable coverage from sheer to medium.</p>
+                        <p class="product-desc">Light-medium with warm undertones for a sun-kissed glow. Buildable coverage from sheer to medium.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#f7e0cb;" data-c1="#f7e0cb" data-c2="#edd0b8" title="Ivory"></span>
+                            <span class="swatch-dot active" style="background:#f2d5bc;" data-c1="#f2d5bc" data-c2="#e8c5a8" title="Beige"></span>
+                            <span class="swatch-dot" style="background:#e8c5a8;" data-c1="#e8c5a8" data-c2="#deb598" title="Natural"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Warm undertone</span>
                             <span>✓ Light-medium</span>
@@ -157,7 +201,13 @@
                             <span class="shade-number">04</span>
                             <h3 class="product-name">Natural</h3>
                         </div>
-                        <p class="product-desc">Medium tone with neutral undertones—our most popular shade. Perfectly balanced for Asian skin tones. Provides natural coverage that lasts all day without oxidizing.</p>
+                        <p class="product-desc">Medium tone with neutral undertones — our most popular shade. Perfectly balanced for Asian skin tones.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#f2d5bc;" data-c1="#f2d5bc" data-c2="#e8c5a8" title="Beige"></span>
+                            <span class="swatch-dot active" style="background:#e8c5a8;" data-c1="#e8c5a8" data-c2="#deb598" title="Natural"></span>
+                            <span class="swatch-dot" style="background:#deb598;" data-c1="#deb598" data-c2="#d4a588" title="Honey"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Neutral undertone</span>
                             <span>✓ Medium skin</span>
@@ -181,7 +231,13 @@
                             <span class="shade-number">05</span>
                             <h3 class="product-name">Honey</h3>
                         </div>
-                        <p class="product-desc">Medium with warm, golden undertones for a healthy glow. Perfect for those with olive or warm-toned skin. The honey shade enhances your natural radiance beautifully.</p>
+                        <p class="product-desc">Medium with warm, golden undertones for a healthy glow. Perfect for those with olive or warm-toned skin.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#e8c5a8;" data-c1="#e8c5a8" data-c2="#deb598" title="Natural"></span>
+                            <span class="swatch-dot active" style="background:#deb598;" data-c1="#deb598" data-c2="#d4a588" title="Honey"></span>
+                            <span class="swatch-dot" style="background:#d4a588;" data-c1="#d4a588" data-c2="#ca9578" title="Tan"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Warm undertone</span>
                             <span>✓ Medium skin</span>
@@ -205,7 +261,13 @@
                             <span class="shade-number">06</span>
                             <h3 class="product-name">Tan</h3>
                         </div>
-                        <p class="product-desc">Medium-deep with warm undertones for deeper skin tones. Provides seamless coverage that looks like your skin, only better. Long-lasting formula that stays fresh all day.</p>
+                        <p class="product-desc">Medium-deep with warm undertones. Seamless coverage that looks like your skin, only better.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#deb598;" data-c1="#deb598" data-c2="#d4a588" title="Honey"></span>
+                            <span class="swatch-dot active" style="background:#d4a588;" data-c1="#d4a588" data-c2="#ca9578" title="Tan"></span>
+                            <span class="swatch-dot" style="background:#c08968;" data-c1="#c08968" data-c2="#b67958" title="Caramel"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Warm undertone</span>
                             <span>✓ Medium-deep</span>
@@ -229,7 +291,13 @@
                             <span class="shade-number">07</span>
                             <h3 class="product-name">Caramel</h3>
                         </div>
-                        <p class="product-desc">Deep with rich golden undertones for beautiful melanin-rich skin. This luxurious shade provides flawless coverage while enhancing your natural glow.</p>
+                        <p class="product-desc">Deep with rich golden undertones. Flawless coverage that enhances your natural glow beautifully.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#d4a588;" data-c1="#d4a588" data-c2="#ca9578" title="Tan"></span>
+                            <span class="swatch-dot active" style="background:#c08968;" data-c1="#c08968" data-c2="#b67958" title="Caramel"></span>
+                            <span class="swatch-dot" style="background:#a67352;" data-c1="#a67352" data-c2="#9c6342" title="Mocha"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Golden undertone</span>
                             <span>✓ Deep skin</span>
@@ -253,7 +321,12 @@
                             <span class="shade-number">08</span>
                             <h3 class="product-name">Mocha</h3>
                         </div>
-                        <p class="product-desc">Our deepest shade with warm undertones for rich, dark skin tones. Delivers beautiful, even coverage without any ashiness. Celebrates the beauty of deep skin.</p>
+                        <p class="product-desc">Our deepest shade with warm undertones. Even, rich coverage without any ashiness. Celebrates deep skin.</p>
+                        <div class="swatch-picker">
+                            <span style="font-size:0.78rem;color:var(--text-light);margin-right:0.25rem;">Mix:</span>
+                            <span class="swatch-dot" style="background:#c08968;" data-c1="#c08968" data-c2="#b67958" title="Caramel"></span>
+                            <span class="swatch-dot active" style="background:#a67352;" data-c1="#a67352" data-c2="#9c6342" title="Mocha"></span>
+                        </div>
                         <div class="product-features">
                             <span>✓ Warm undertone</span>
                             <span>✓ Deep skin</span>
@@ -264,6 +337,212 @@
                             <button class="buy-button">Order Now</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before / After Slider -->
+    <section class="before-after-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="See the Difference" data-th="เห็นความแตกต่าง">See the Difference</h2>
+                <p class="section-subtitle" data-en="Drag to compare skin with and without KissMoKa Foundation" data-th="ลากเพื่อเปรียบเทียบผิวก่อนและหลังใช้">Drag to compare skin with and without KissMoKa Foundation</p>
+            </div>
+            <div class="ba-container">
+                <div class="ba-before">
+                    <div class="ba-inner">
+                        <span class="ba-emoji">🙎‍♀️</span>
+                        <span class="ba-label" data-en="Before" data-th="ก่อน">Before</span>
+                    </div>
+                </div>
+                <div class="ba-after" id="baAfter">
+                    <div class="ba-inner">
+                        <span class="ba-emoji">😊</span>
+                        <span class="ba-label" data-en="After — KissMoKa" data-th="หลัง — KissMoKa">After — KissMoKa</span>
+                    </div>
+                </div>
+                <div class="ba-divider" id="baDivider">
+                    <div class="ba-handle">◀▶</div>
+                </div>
+                <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" aria-label="Drag to compare">
+            </div>
+            <p class="ba-hint" data-en="← Drag the slider to compare →" data-th="← ลากแถบเลื่อนเพื่อเปรียบเทียบ →">← Drag the slider to compare →</p>
+        </div>
+    </section>
+
+    <!-- Shade Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Shade Comparison" data-th="เปรียบเทียบเฉดสี">Shade Comparison</h2>
+                <p class="section-subtitle" data-en="Find exactly what works for your skin type and undertone" data-th="ค้นหาเฉดสีที่เหมาะกับสีผิวของคุณ">Find exactly what works for your skin type and undertone</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Shade</th>
+                            <th>Depth</th>
+                            <th>Undertone</th>
+                            <th>Oily Skin</th>
+                            <th>Dry Skin</th>
+                            <th>SPF 30</th>
+                            <th>12h Wear</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#f5e5d8;"></div><strong>01 Porcelain</strong></div></td>
+                            <td>Fair</td><td>Cool</td>
+                            <td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#f7e0cb;"></div><strong>02 Ivory</strong></div></td>
+                            <td>Light</td><td>Neutral</td>
+                            <td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#f2d5bc;"></div><strong>03 Beige</strong></div></td>
+                            <td>Light-Med</td><td>Warm</td>
+                            <td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#e8c5a8;"></div><strong>04 Natural</strong></div></td>
+                            <td>Medium</td><td>Neutral</td>
+                            <td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#deb598;"></div><strong>05 Honey</strong></div></td>
+                            <td>Medium</td><td>Warm</td>
+                            <td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#d4a588;"></div><strong>06 Tan</strong></div></td>
+                            <td>Med-Deep</td><td>Warm</td>
+                            <td class="ct-yes">✓</td><td class="ct-neutral">—</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#c08968;"></div><strong>07 Caramel</strong></div></td>
+                            <td>Deep</td><td>Golden</td>
+                            <td class="ct-yes">✓</td><td class="ct-neutral">—</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td><div class="ct-shade-cell"><div class="ct-swatch" style="background:#a67352;"></div><strong>08 Mocha</strong></div></td>
+                            <td>Deep</td><td>Warm</td>
+                            <td class="ct-yes">✓</td><td class="ct-neutral">—</td><td class="ct-yes">✓</td><td class="ct-yes">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Customer Reviews" data-th="รีวิวจากลูกค้า">Customer Reviews</h2>
+                <p class="section-subtitle" data-en="Real feedback from real customers" data-th="รีวิวจริงจากลูกค้าจริง">Real feedback from real customers</p>
+            </div>
+            <div class="rating-summary">
+                <div class="rating-score">
+                    <div class="rating-big">4.9</div>
+                    <span class="rating-stars-big">★★★★★</span>
+                    <div class="rating-count">Based on 248 reviews</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar-row"><span class="rating-bar-label">5 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" data-w="92"></div></div></div>
+                    <div class="rating-bar-row"><span class="rating-bar-label">4 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" data-w="6"></div></div></div>
+                    <div class="rating-bar-row"><span class="rating-bar-label">3 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" data-w="1"></div></div></div>
+                    <div class="rating-bar-row"><span class="rating-bar-label">2 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" data-w="1"></div></div></div>
+                    <div class="rating-bar-row"><span class="rating-bar-label">1 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" data-w="0"></div></div></div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">👩</span>
+                            <span>
+                                <span class="review-name">Pim S.</span>
+                                <span class="review-shade-tag">Shade 03 Beige</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Stays matte all day on my oily skin without looking heavy. I've repurchased 4 times!"</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">👩‍💼</span>
+                            <span>
+                                <span class="review-name">May R.</span>
+                                <span class="review-shade-tag">Shade 04 Natural</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Finally a foundation that doesn't cause breakouts. The buildable coverage is perfect for the office."</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">👱‍♀️</span>
+                            <span>
+                                <span class="review-name">Mook T.</span>
+                                <span class="review-shade-tag">Shade 02 Ivory</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"The SPF 30 is a huge bonus for daily use. Skin looks natural and hydrated all day."</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">🧖‍♀️</span>
+                            <span>
+                                <span class="review-name">Fah W.</span>
+                                <span class="review-shade-tag">Shade 05 Honey</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Perfect warm golden shade for my olive skin. I love how it doesn't oxidize throughout the day!"</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">👸</span>
+                            <span>
+                                <span class="review-name">Nook P.</span>
+                                <span class="review-shade-tag">Shade 07 Caramel</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"So happy they have deeper shades! The Caramel matches my skin perfectly. No more ashiness!"</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-avatar">💁‍♀️</span>
+                            <span>
+                                <span class="review-name">Ploy K.</span>
+                                <span class="review-shade-tag">Shade 01 Porcelain</span>
+                            </span>
+                        </div>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Super light on skin. As a pale girl it's hard to find the right shade, but Porcelain is perfect!"</p>
+                    <div class="review-verified">✓ Verified Purchase</div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bounkeozx1.github.io/KissMoKa/sitemap.xml

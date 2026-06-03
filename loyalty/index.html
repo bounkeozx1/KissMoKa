@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards Program - KissMoKa</title>
+    <meta name="description" content="Join KissMoKa Rewards and earn points on every purchase. Redeem for free products, discounts, and exclusive VIP perks. Coming soon!">
+    <meta name="theme-color" content="#d4949f">
+    <link rel="manifest" href="../manifest.json">
+    <script>(function(){const d=localStorage.getItem('darkMode');if(d==='enabled')document.documentElement.classList.add('dark-mode');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">KissMoKa</a>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="../product/index.html" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="../why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="../content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="../faq/index.html" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
+            </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <section class="loyalty-section" style="padding-top:140px;padding-bottom:6rem;">
+        <div class="container">
+            <span class="coming-soon-badge" data-en="Coming Soon — 2026" data-th="เร็วๆ นี้ — 2026">Coming Soon — 2026</span>
+            <span class="loyalty-icon">💎</span>
+            <h1 class="section-title" data-en="KissMoKa Rewards" data-th="โปรแกรมสะสมแต้ม KissMoKa">KissMoKa Rewards</h1>
+            <p class="section-subtitle" data-en="Earn points on every purchase, unlock exclusive perks, and be the first to access new shades." data-th="สะสมแต้มทุกการซื้อ ปลดล็อคสิทธิพิเศษ และเป็นคนแรกที่ได้สัมผัสเฉดสีใหม่">Earn points on every purchase, unlock exclusive perks, and be the first to access new shades.</p>
+
+            <div class="loyalty-perks" style="margin-top:4rem;">
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">⭐</span>
+                    <span class="loyalty-perk-name" data-en="Earn Points" data-th="สะสมแต้ม">Earn Points</span>
+                    <span class="loyalty-perk-desc">฿1 spent = 1 point</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🎁</span>
+                    <span class="loyalty-perk-name" data-en="Free Products" data-th="สินค้าฟรี">Free Products</span>
+                    <span class="loyalty-perk-desc">Redeem at 500 pts</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🚚</span>
+                    <span class="loyalty-perk-name" data-en="Free Shipping" data-th="ส่งฟรี">Free Shipping</span>
+                    <span class="loyalty-perk-desc">All orders for members</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🎀</span>
+                    <span class="loyalty-perk-name" data-en="VIP Access" data-th="สิทธิ์ VIP">VIP Access</span>
+                    <span class="loyalty-perk-desc">Early shade launches</span>
+                </div>
+                <div class="loyalty-perk">
+                    <span class="loyalty-perk-icon">🏷️</span>
+                    <span class="loyalty-perk-name" data-en="Birthday Treat" data-th="ของขวัญวันเกิด">Birthday Treat</span>
+                    <span class="loyalty-perk-desc">Extra points in birth month</span>
+                </div>
+            </div>
+
+            <div style="max-width:600px;margin:4rem auto 0;background:var(--white);border-radius:25px;padding:3rem;box-shadow:var(--shadow-card);text-align:left;">
+                <h3 style="font-size:1.4rem;font-weight:300;color:var(--text-dark);margin-bottom:1rem;" data-en="Get Notified When We Launch" data-th="รับการแจ้งเตือนเมื่อเราเปิดตัว">Get Notified When We Launch</h3>
+                <p style="font-size:0.93rem;color:var(--text-gray);margin-bottom:2rem;" data-en="Be the first to know — message us on LINE with your name to join the waitlist!" data-th="เป็นคนแรกที่รู้ — ส่งข้อความหาเราทาง LINE พร้อมชื่อของคุณเพื่อเข้าร่วมรายชื่อรอ!">Be the first to know — message us on LINE with your name to join the waitlist!</p>
+                <a href="https://lin.ee/KissMoKa?text=${encodeURIComponent('สนใจเข้าร่วม KissMoKa Rewards! ชื่อ: ')}" target="_blank" class="btn btn-primary btn-large" style="width:100%;justify-content:center;" data-en="Join the Waitlist on LINE 📱" data-th="เข้าร่วมรายชื่อรอผ่าน LINE 📱">Join the Waitlist on LINE 📱</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KissMoKa</h3>
+                    <p>Your natural beauty companion.</p>
+                    <div class="footer-social">
+                        <a href="https://lin.ee/KissMoKa" target="_blank">📱</a>
+                        <a href="https://www.facebook.com/kissmoka" target="_blank">📘</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul><li><a href="../product/index.html">All Products</a></li><li><a href="../quiz/index.html">Shade Quiz</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Help</h4>
+                    <ul><li><a href="../faq/index.html">FAQ</a></li><li><a href="../contact/index.html">Contact</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Order Now</h4>
+                    <div class="social-buttons">
+                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE Official</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 KissMoKa. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "KissMoKa Foundation",
+  "short_name": "KissMoKa",
+  "description": "Premium foundation in 8 shades for Asian skin tones. SPF 30, 12-hour wear.",
+  "start_url": "/KissMoKa/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#d4949f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["shopping", "beauty"],
+  "lang": "en-TH"
+}

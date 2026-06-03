@@ -34,14 +34,33 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../product/index.html">Products</a></li>
-                <li><a href="../why-us/index.html">Why Us</a></li>
-                <li><a href="../content/index.html">Beauty Guide</a></li>
-                <li><a href="index.html" class="active">FAQ</a></li>
+                <li><a href="../index.html" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="../product/index.html" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="../why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="../content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="index.html" class="active" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
             </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
         </div>
     </nav>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
 
     <!-- Page Header -->
     <section class="page-header">

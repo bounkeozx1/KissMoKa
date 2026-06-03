@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shade Quiz - KissMoKa</title>
+    <meta name="description" content="Take our 3-step shade quiz to find your perfect KissMoKa Foundation match.">
+    <meta property="og:title" content="Find Your Perfect Shade — KissMoKa Shade Quiz">
+    <meta name="theme-color" content="#d4949f">
+    <link rel="manifest" href="../manifest.json">
+    <script>(function(){const d=localStorage.getItem('darkMode');if(d==='enabled')document.documentElement.classList.add('dark-mode');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">KissMoKa</a>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="../product/index.html" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="../why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="../content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="../faq/index.html" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
+            </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <h1 class="page-title" data-en="Find Your Perfect Shade" data-th="ค้นหาเฉดสีที่ใช่สำหรับคุณ">Find Your Perfect Shade</h1>
+        <p class="page-description" data-en="Answer 2 quick questions and we'll match you to your ideal KissMoKa shade" data-th="ตอบ 2 คำถามสั้นๆ แล้วเราจะจับคู่เฉดสีที่เหมาะกับคุณ">Answer 2 quick questions and we'll match you to your ideal KissMoKa shade</p>
+    </section>
+
+    <section class="quiz-section">
+        <div class="container">
+            <div class="quiz-container">
+                <div id="quizForm">
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-dot active"></div>
+                        <div class="quiz-dot"></div>
+                    </div>
+
+                    <!-- Step 1: Skin Depth -->
+                    <div class="quiz-step active" data-step="depth">
+                        <p class="quiz-q" data-en="How would you describe your skin depth?" data-th="ผิวของคุณเป็นแบบไหน?">How would you describe your skin depth?</p>
+                        <div class="quiz-opts">
+                            <button class="quiz-opt" data-value="fair">
+                                <span class="quiz-opt-emoji">🌸</span>
+                                <span class="quiz-opt-name" data-en="Fair / Light" data-th="ผิวขาว / อ่อน">Fair / Light</span>
+                                <span class="quiz-opt-hint" data-en="Burns easily in sun" data-th="ผิวไหม้แดดง่าย">Burns easily in sun</span>
+                            </button>
+                            <button class="quiz-opt" data-value="medium">
+                                <span class="quiz-opt-emoji">🌻</span>
+                                <span class="quiz-opt-name" data-en="Medium" data-th="ผิวกลาง">Medium</span>
+                                <span class="quiz-opt-hint" data-en="Tans moderately" data-th="แทนได้ปานกลาง">Tans moderately</span>
+                            </button>
+                            <button class="quiz-opt" data-value="deep">
+                                <span class="quiz-opt-emoji">🌺</span>
+                                <span class="quiz-opt-name" data-en="Deep / Dark" data-th="ผิวเข้ม / คล้ำ">Deep / Dark</span>
+                                <span class="quiz-opt-hint" data-en="Rarely burns, tans easily" data-th="แทนง่าย ไหม้แดดยาก">Rarely burns, tans easily</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Undertone -->
+                    <div class="quiz-step" data-step="undertone">
+                        <p class="quiz-q" data-en="What's your skin's undertone?" data-th="โทนสีผิวของคุณเป็นอย่างไร?">What's your skin's undertone?</p>
+                        <div class="quiz-opts">
+                            <button class="quiz-opt" data-value="cool">
+                                <span class="quiz-opt-emoji">💙</span>
+                                <span class="quiz-opt-name" data-en="Cool" data-th="เย็น">Cool</span>
+                                <span class="quiz-opt-hint" data-en="Veins look blue/purple" data-th="เส้นเลือดสีน้ำเงิน/ม่วง">Veins look blue/purple</span>
+                            </button>
+                            <button class="quiz-opt" data-value="neutral">
+                                <span class="quiz-opt-emoji">💚</span>
+                                <span class="quiz-opt-name" data-en="Neutral" data-th="กลาง">Neutral</span>
+                                <span class="quiz-opt-hint" data-en="Veins look blue-green" data-th="เส้นเลือดสีน้ำเงิน-เขียว">Veins look blue-green</span>
+                            </button>
+                            <button class="quiz-opt" data-value="warm">
+                                <span class="quiz-opt-emoji">💛</span>
+                                <span class="quiz-opt-name" data-en="Warm" data-th="อบอุ่น">Warm</span>
+                                <span class="quiz-opt-hint" data-en="Veins look green" data-th="เส้นเลือดสีเขียว">Veins look green</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result -->
+                <div class="quiz-result" id="quizResult">
+                    <div class="quiz-result-swatch"></div>
+                    <h2 class="quiz-result-title">Your Match: Natural (Shade 04)</h2>
+                    <p class="quiz-result-sub">Medium skin with neutral undertones — our most popular, perfectly balanced shade.</p>
+                    <div class="quiz-result-btns">
+                        <a href="../product/index.html" class="btn btn-primary" data-en="Shop This Shade" data-th="สั่งซื้อเฉดนี้">Shop This Shade</a>
+                        <button class="btn btn-secondary" id="quizRestart" data-en="Retake Quiz" data-th="ทำแบบทดสอบใหม่">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KissMoKa</h3>
+                    <p>Your natural beauty companion.</p>
+                    <div class="footer-social">
+                        <a href="https://lin.ee/KissMoKa" target="_blank">📱</a>
+                        <a href="https://www.facebook.com/kissmoka" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/kissmoka.official" target="_blank">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="../product/index.html">All Products</a></li>
+                        <li><a href="index.html">Shade Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="../faq/index.html">FAQ</a></li>
+                        <li><a href="../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Order Now</h4>
+                    <div class="social-buttons">
+                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE Official</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KissMoKa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

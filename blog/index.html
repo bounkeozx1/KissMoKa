@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Blog - KissMoKa</title>
+    <meta name="description" content="Beauty tips, makeup tutorials, and skincare advice from the KissMoKa team.">
+    <meta property="og:title" content="KissMoKa Beauty Blog">
+    <meta name="theme-color" content="#d4949f">
+    <link rel="manifest" href="../manifest.json">
+    <script>(function(){const d=localStorage.getItem('darkMode');if(d==='enabled')document.documentElement.classList.add('dark-mode');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">KissMoKa</a>
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" data-en="Home" data-th="หน้าแรก">Home</a></li>
+                <li><a href="../product/index.html" data-en="Products" data-th="สินค้า">Products</a></li>
+                <li><a href="../why-us/index.html" data-en="Why Us" data-th="ทำไมต้องเรา">Why Us</a></li>
+                <li><a href="../content/index.html" data-en="Beauty Guide" data-th="คู่มือความงาม">Beauty Guide</a></li>
+                <li><a href="../faq/index.html" data-en="FAQ" data-th="คำถาม">FAQ</a></li>
+            </ul>
+            <div class="nav-extras">
+                <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/><path d="M15 15L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-row">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#d4949f" stroke-width="2"/><path d="M15 15L13 13" stroke="#d4949f" stroke-width="2" stroke-linecap="round"/></svg>
+                <input class="search-input" id="searchInput" placeholder="Search shades, pages…" autocomplete="off">
+                <button class="search-close" id="searchClose">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <h1 class="page-title" data-en="Beauty Blog" data-th="บล็อกความงาม">Beauty Blog</h1>
+        <p class="page-description" data-en="Tips, tutorials, and beauty news from the KissMoKa team" data-th="เคล็ดลับ บทเรียน และข่าวความงามจากทีม KissMoKa">Tips, tutorials, and beauty news from the KissMoKa team</p>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#fef5f7,#f5e6e8);">
+                        <span>✨</span>
+                        <span class="blog-cat-badge">Tutorial</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">June 1, 2026 · 5 min read</div>
+                        <h3 class="blog-title" data-en="5 Steps to a Flawless Foundation Application" data-th="5 ขั้นตอนสู่การแต่งหน้าที่สมบูรณ์แบบ">5 Steps to a Flawless Foundation Application</h3>
+                        <p class="blog-excerpt" data-en="Master the art of foundation blending with these professional techniques that keep your skin looking natural all day." data-th="เรียนรู้เทคนิคการเกลี่ยฟาวเดชั่นอย่างมืออาชีพเพื่อผิวที่ดูเป็นธรรมชาติตลอดวัน">Master the art of foundation blending with these professional techniques that keep your skin looking natural all day.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#fef5f7,#ead5c3);">
+                        <span>💧</span>
+                        <span class="blog-cat-badge">Skincare</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">May 25, 2026 · 4 min read</div>
+                        <h3 class="blog-title" data-en="Why Hyaluronic Acid is a Game-Changer for Foundation Wearers" data-th="ทำไม Hyaluronic Acid ถึงเปลี่ยนเกมสำหรับผู้ใช้ฟาวเดชั่น">Why Hyaluronic Acid is a Game-Changer for Foundation Wearers</h3>
+                        <p class="blog-excerpt" data-en="Learn how this powerhouse ingredient in KissMoKa Foundation keeps skin plump, hydrated, and makeup-ready throughout the day." data-th="เรียนรู้ว่าส่วนผสมนี้ใน KissMoKa Foundation ช่วยให้ผิวชุ่มชื้นและพร้อมแต่งหน้าตลอดวันได้อย่างไร">Learn how this powerhouse ingredient in KissMoKa Foundation keeps skin plump, hydrated, and makeup-ready throughout the day.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#fef5f7,#deb598);">
+                        <span>🌞</span>
+                        <span class="blog-cat-badge">Sun Care</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">May 18, 2026 · 3 min read</div>
+                        <h3 class="blog-title" data-en="SPF in Foundation: Do You Still Need Sunscreen?" data-th="SPF ในฟาวเดชั่น: คุณยังต้องใช้กันแดดอยู่ไหม?">SPF in Foundation: Do You Still Need Sunscreen?</h3>
+                        <p class="blog-excerpt" data-en="With SPF 30 already in your KissMoKa Foundation, here's what dermatologists say about your daily sun protection routine." data-th="เมื่อ KissMoKa Foundation มี SPF 30 อยู่แล้ว นี่คือสิ่งที่ผิวหนังแพทย์แนะนำเกี่ยวกับการป้องกันแดดประจำวันของคุณ">With SPF 30 already in your KissMoKa Foundation, here's what dermatologists say about your daily sun protection routine.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#f5e6e8,#f0e0d5);">
+                        <span>🎨</span>
+                        <span class="blog-cat-badge">Color Theory</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">May 10, 2026 · 6 min read</div>
+                        <h3 class="blog-title" data-en="Understanding Undertones: The Key to Finding Your Perfect Shade" data-th="ทำความเข้าใจโทนสีผิว: กุญแจสู่การหาเฉดสีที่ใช่">Understanding Undertones: The Key to Finding Your Perfect Shade</h3>
+                        <p class="blog-excerpt" data-en="Cool, neutral, or warm — understanding your skin's undertone is the most important step to finding foundation that looks seamless." data-th="เย็น กลาง หรืออุ่น — การเข้าใจโทนสีผิวคือขั้นตอนที่สำคัญที่สุดในการหาฟาวเดชั่นที่กลมกลืนกับผิว">Cool, neutral, or warm — understanding your skin's undertone is the most important step to finding foundation that looks seamless.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#fef5f7,#e8c5a8);">
+                        <span>🌿</span>
+                        <span class="blog-cat-badge">Ingredients</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">May 2, 2026 · 4 min read</div>
+                        <h3 class="blog-title" data-en="What Makes KissMoKa Non-Comedogenic?" data-th="อะไรทำให้ KissMoKa ไม่อุดตันรูขุมขน?">What Makes KissMoKa Non-Comedogenic?</h3>
+                        <p class="blog-excerpt" data-en="We break down the science behind our skin-safe formula and explain why KissMoKa won't clog your pores, even for acne-prone skin." data-th="เราอธิบายวิทยาศาสตร์เบื้องหลังสูตรที่ปลอดภัยสำหรับผิวของเรา และเหตุผลที่ KissMoKa ไม่อุดตันรูขุมขน">We break down the science behind our skin-safe formula and explain why KissMoKa won't clog your pores, even for acne-prone skin.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-thumbnail" style="background:linear-gradient(135deg,#f0e6e8,#fef5f7);">
+                        <span>⏰</span>
+                        <span class="blog-cat-badge">Tips</span>
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">April 28, 2026 · 3 min read</div>
+                        <h3 class="blog-title" data-en="How to Make Your Foundation Last All Day in Humid Weather" data-th="วิธีให้ฟาวเดชั่นติดทนตลอดวันในสภาพอากาศชื้น">How to Make Your Foundation Last All Day in Humid Weather</h3>
+                        <p class="blog-excerpt" data-en="Living in Thailand's hot and humid climate? Here's exactly how to prep your skin so KissMoKa Foundation stays fresh from morning to night." data-th="อยู่ในสภาพอากาศร้อนชื้นของไทย? นี่คือวิธีเตรียมผิวให้ KissMoKa Foundation ติดทนตั้งแต่เช้าจนค่ำ">Living in Thailand's hot and humid climate? Here's exactly how to prep your skin so KissMoKa Foundation stays fresh from morning to night.</p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-th="อ่านต่อ →">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Ready to Try KissMoKa?" data-th="พร้อมลอง KissMoKa แล้วหรือยัง?">Ready to Try KissMoKa?</h2>
+                <p data-en="Take the quiz to find your perfect shade and order on LINE" data-th="ทำแบบทดสอบเพื่อหาเฉดสีที่ใช่ และสั่งซื้อผ่าน LINE">Take the quiz to find your perfect shade and order on LINE</p>
+                <div class="cta-buttons">
+                    <a href="../quiz/index.html" class="btn btn-primary btn-large" data-en="Take the Shade Quiz" data-th="ทำแบบทดสอบเฉดสี">Take the Shade Quiz</a>
+                    <a href="../product/index.html" class="btn btn-secondary btn-large" data-en="Shop All Shades" data-th="ดูสินค้าทั้งหมด">Shop All Shades</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KissMoKa</h3>
+                    <p>Your natural beauty companion.</p>
+                    <div class="footer-social">
+                        <a href="https://lin.ee/KissMoKa" target="_blank">📱</a>
+                        <a href="https://www.facebook.com/kissmoka" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/kissmoka.official" target="_blank">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul><li><a href="../product/index.html">All Products</a></li><li><a href="../quiz/index.html">Shade Quiz</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul><li><a href="index.html">Blog</a></li><li><a href="../ingredients/index.html">Ingredients</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Order Now</h4>
+                    <div class="social-buttons">
+                        <a href="https://lin.ee/KissMoKa" target="_blank" class="social-btn line">LINE Official</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 KissMoKa. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
